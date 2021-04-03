@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: grey;
+        }
+        div{
+            width: 400px;
+            height: 300px;
+            background-color: aquamarine;
+            margin: auto;
+            margin-top: 50px;
+            padding: 10px;
+
+        }
+        div #inp1{
+            margin-top: 50px;
+            font-size: 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+   
+    <div>
+        <form onsubmit="return f1()" action="">
+        Enter mobile Number:<input id="inp1" type="text"><br><br>
+        <span style="text-align: center; color: red;" id="message"></span><br><br>
+        <button onclick="f1()" style="margin-left: 80px;font-size: 20px;">submit</button>
+    </form>
+    
+    </div>
+
+    <script>
+        function f1(){
+           inpRef= document.getElementById("inp1").value;
+           if(inpRef==""){
+               document.getElementById("message").innerHTML="**required field!"
+               return false;
+           }
+           else if(isNaN(inpRef)){
+               document.getElementById("message").innerHTML="** please enter a number!"
+               return false
+           }
+           else if(inpRef.charAt(0)!=9 && inpRef.charAt(0)!=8 && inpRef.charAt(0)!=7 ){
+               document.getElementById("message").innerHTML="** Number must start with 9 or 8 or 7"
+               return false
+           }
+           else if(inpRef.length<10){
+               document.getElementById("message").innerHTML="** Number must be 10 digits!"
+               return false
+           }
+           else if(inpRef.length>10){
+               document.getElementById("message").innerHTML="** Number must be 10 digits!"
+               return false
+           }
+           else{
+               return true
+           }
+           
+        }
+    </script>
+
+</body>
+</html>
