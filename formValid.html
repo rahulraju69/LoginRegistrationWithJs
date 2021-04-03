@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+   <style>
+       #div1{
+           width: 500px;
+           height: 400px;
+           background-color: cornflowerblue;
+           margin: auto;
+           text-align: center;
+           padding: 40px;
+           font-size: 30px;
+       }
+       #div1 input,button{
+           font-size: 20px;
+       }
+       #div1 p{
+           font-size: 18px;
+           padding: 0px;
+       }
+   </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+    <form onsubmit=" return f1()" action="formHtml.html">
+      <label for="username">username</label>
+        <input id="user" type="text">
+        <p id="showError"></p>
+        <label for="password" >Password</label>
+        <input id="pass" type="text"><br>
+        <p id="showError1"></p>
+      <button onclick="f1()">Submit</button>
+      </button>
+    </form>
+    </div>
+
+
+
+
+
+<script>
+function f1(){
+        var user= document.getElementById("user");
+        var pass= document.getElementById("pass");
+
+        if((user.value =="" || pass.value=="")){
+           
+            alert("required fields")
+            
+            return false;
+        }else{
+                return true
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

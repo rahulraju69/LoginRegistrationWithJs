@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #div1{
+           background:rgb(145, 16, 16);
+            width: 300px;
+            height: 300px;
+            margin: 70px;
+            margin-left: 30%;
+            padding: 30px;
+            text-align: center;
+
+
+        }
+        button{
+            font-size: 30px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+  <div id="div1" >
+      <form  onsubmit="return f1()"  action="">
+      New Password:<input id="pass" type="text"><br><br>
+      Confirm Password:<input id="pass1" type="text"><br><br><br>
+      <button onclick="f1()">login</button>
+      </form>
+  </div>
+
+  <script>
+      function f1(){
+         var inp= document.getElementById("pass").value;
+         var inp1=document.getElementById("pass1").value;
+         if(inp=="" || inp1==""){
+             alert("required field")
+             return false
+         }else if(inp !=inp1){
+             alert("password doesnt match")
+             return false
+         }else{
+             return true
+         }
+      }
+  </script>
+</body>
+</html>
